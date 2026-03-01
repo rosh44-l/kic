@@ -1,187 +1,129 @@
-<!DOCTYPE html>
+<ht1><!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>NeoWear - Clothing Brand</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
-    }
-
-    header {
-      background: black;
-      color: white;
-      padding: 15px;
-      text-align: center;
-    }
-
-    nav {
-      background: #222;
-      padding: 10px;
-      text-align: center;
-    }
-
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      color: orange;
-    }
-
-    .banner {
-      background: url("https://images.unsplash.com/photo-1520975916090-3105956dac38") no-repeat center;
-      background-size: cover;
-      color: white;
-      height: 250px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 36px;
-      font-weight: bold;
-    }
-
-    .section {
-      padding: 30px;
-      text-align: center;
-    }
-
-    .products {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .card {
-      background: white;
-      width: 200px;
-      padding: 15px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-
-    .card img {
-      width: 100%;
-      border-radius: 10px;
-    }
-
-    footer {
-      background: black;
-      color: white;
-      text-align: center;
-      padding: 10px;
-      margin-top: 30px;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>Elegant Jewellery Store</title>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f8f8f8;
+}
+header {
+  background: #111;
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+nav {
+  background: gold;
+  padding: 10px;
+  text-align: center;
+}
+nav a {
+  margin: 10px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+.card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  text-align: center;
+}
+.card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+.card h3 {
+  margin: 10px 0;
+}
+.price {
+  color: green;
+  font-size: 18px;
+}
+.old-price {
+  text-decoration: line-through;
+  color: red;
+}
+.stock {
+  color: blue;
+}
+footer {
+  background: #111;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+</style>
 </head>
+
 <body>
 
 <header>
-  <h1>NeoWear</h1>
-  <p>Korean Style Clothing Brand</p>
+<h1>✨ Elegant Jewellery Collection ✨</h1>
+<p>Gold | Silver | Minimal | Heavy Jewellery</p>
 </header>
 
 <nav>
-  <a href="#tshirt">T-Shirt</a>
-  <a href="#shirt">Shirt</a>
-  <a href="#pant">Pant</a>
-  <a href="#korean">Korean Dress</a>
-  <a href="#others">Others</a>
+<a href="#">Rings</a>
+<a href="#">Necklace</a>
+<a href="#">Earrings</a>
+<a href="#">Bangles</a>
 </nav>
 
-<div class="banner">
-  New Fashion Collection 2026
+<div class="products">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1600180758890-6f1c0a35bcd4" alt="Ring">
+<h3>Stainless Gold Ring</h3>
+<p class="old-price">Rs 1500</p>
+<p class="price">Rs 1200</p>
+<p class="stock">Remaining: 8</p>
+<p>Discount: 20%</p>
 </div>
 
-<div class="section" id="tshirt">
-  <h2>T-Shirts</h2>
-  <div class="products">
-    <div class="card">
-      <img src="https://via.placeholder.com/200">
-      <h3>Casual T-Shirt</h3>
-      <p>Rs. 1200</p>
-    </div>
-    <div class="card">
-      <img src="https://via.placeholder.com/200">
-      <h3>Printed T-Shirt</h3>
-      <p>Rs. 1500</p>
-    </div>
-  </div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1617038260897-41a1f14a8e57" alt="Necklace">
+<h3>Silver Necklace</h3>
+<p class="old-price">Rs 3000</p>
+<p class="price">Rs 2500</p>
+<p class="stock">Remaining: 5</p>
+<p>Discount: 15%</p>
 </div>
 
-<div class="section" id="shirt">
-  <h2>Shirts</h2>
-  <div class="products">
-    <div class="card">
-      <img src="https://via.placeholder.com/200">
-      <h3>Formal Shirt</h3>
-      <p>Rs. 2000</p>
-    </div>
-    <div class="card">
-      <img src="https://via.placeholder.com/200">
-      <h3>Casual Shirt</h3>
-      <p>Rs. 1800</p>
-    </div>
-  </div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1585386959984-a415522b8319" alt="Earrings">
+<h3>Gold Earrings</h3>
+<p class="old-price">Rs 2000</p>
+<p class="price">Rs 1600</p>
+<p class="stock">Remaining: 12</p>
+<p>Discount: 20%</p>
 </div>
 
-<div class="section" id="pant">
-  <h2>Pants</h2>
-  <div class="products">
-    <div class="card">
-      <img src="https://via.placeholder.com/200">
-      <h3>Jeans Pant</h3>
-      <p>Rs. 2500</p>
-    </div>
-    <div class="card">
-      <img src="https://via.placeholder.com/200">
-      <h3>Cotton Pant</h3>
-      <p>Rs. 2200</p>
-    </div>
-  </div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1618354691214-0b0db0bde5bc" alt="Bangle">
+<h3>Heavy Bangles</h3>
+<p class="old-price">Rs 5000</p>
+<p class="price">Rs 4200</p>
+<p class="stock">Remaining: 3</p>
+<p>Discount: 16%</p>
 </div>
 
-<div class="section" id="korean">
-  <h2>Korean Dresses</h2>
-  <div class="products">
-    <div class="card">
-      <img src="https://via.placeholder.com/200">
-      <h3>Korean Hoodie</h3>
-      <p>Rs. 3000</p>
-    </div>
-    <div class="card">
-      <img src="https://via.placeholder.com/200">
-      <h3>Korean Oversized Tee</h3>
-      <p>Rs. 2800</p>
-    </div>
-  </div>
-</div>
-
-<div class="section" id="others">
-  <h2>Others</h2>
-  <div class="products">
-    <div class="card">
-      <img src="https://via.placeholder.com/200">
-      <h3>Jacket</h3>
-      <p>Rs. 3500</p>
-    </div>
-    <div class="card">
-      <img src="https://via.placeholder.com/200">
-      <h3>Cap</h3>
-      <p>Rs. 800</p>
-    </div>
-  </div>
 </div>
 
 <footer>
-  <p>© 2026 NeoWear Clothing Brand</p>
+<p>© 2026 Elegant Jewellery Store | All Rights Reserved</p>
 </footer>
 
 </body>
-</html>
+</html></ht1>
