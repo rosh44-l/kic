@@ -3,123 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Variety Jewelers | Premium Stainless Steel & AD Jewelry</title>
+    <title>Variety Jewelers | Premium Stainless Steel</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@200;400;600&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Montserrat', sans-serif; background-color: #0a0a0a; color: #f4f4f4; }
-        .gold-font { font-family: 'Cinzel', serif; color: #d4af37; }
-        .gold-border { border-color: #d4af37; }
-        .gold-bg { background: linear-gradient(135deg, #b8860b 0%, #d4af37 50%, #b8860b 100%); }
-        .glass-nav { background: rgba(10, 10, 10, 0.85); backdrop-filter: blur(10px); }
-        .product-card { background: #1a1a1a; transition: transform 0.3s ease; }
-        .product-card:hover { transform: translateY(-10px); border: 1px solid #d4af37; }
+        :root { --gold: #c5a059; --dark: #111111; }
+        body { font-family: 'Montserrat', sans-serif; background-color: #fafafa; color: var(--dark); scroll-behavior: smooth; }
+        .heading-font { font-family: 'Cinzel', serif; }
+        .gold-text { color: var(--gold); }
+        .bg-gold { background-color: var(--gold); }
+        .hero-gradient { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1584302174644-629a43519847?q=80&w=2000'); background-size: cover; background-position: center; }
+        .product-card img { transition: transform 0.5s ease; height: 300px; width: 100%; object-fit: cover; }
+        .product-card:hover img { transform: scale(1.05); }
+        .edit-panel { position: fixed; bottom: 20px; left: 20px; z-index: 1000; background: white; padding: 15px; border: 1px solid var(--gold); box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-radius: 8px; width: 250px; }
     </style>
 </head>
 <body>
 
-    <nav class="fixed top-0 w-full z-50 glass-nav border-b border-white/10 px-6 py-4">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <h1 class="text-2xl font-bold tracking-[0.2em] gold-font">VARIETY JEWELERS</h1>
-            <div class="hidden md:flex space-x-8 text-[10px] uppercase tracking-widest font-semibold">
-                <a href="#home" class="hover:text-yellow-500">Home</a>
-                <a href="#collection" class="hover:text-yellow-500">Collection</a>
-                <a href="#contact" class="hover:text-yellow-500">Contact</a>
-            </div>
-            <div class="flex items-center space-x-4">
-                <span class="text-xs gold-font hidden sm:block">📞 <span id="display-phone-top">+1 (555) 000-0000</span></span>
-                <button class="gold-bg text-black text-[10px] px-4 py-2 font-bold uppercase tracking-tighter">Shop Now</button>
-            </div>
+    <div class="edit-panel">
+        <h4 class="text-xs font-bold uppercase mb-2 gold-text">Editor Mode</h4>
+        <input id="edit-phone" type="text" placeholder="Update Phone" class="w-full border p-1 mb-2 text-xs">
+        <input id="edit-loc" type="text" placeholder="Update Location" class="w-full border p-1 mb-2 text-xs">
+        <button onclick="saveChanges()" class="bg-gold text-white w-full py-1 text-xs font-bold uppercase">Save Updates</button>
+    </div>
+
+    <nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 px-8 py-4 flex justify-between items-center">
+        <div class="heading-font text-2xl tracking-tighter font-bold gold-text">VARIETY JEWELERS</div>
+        <div class="hidden lg:flex space-x-8 text-[11px] uppercase tracking-widest font-semibold">
+            <a href="#home" class="hover:text-[#c5a059]">Home</a>
+            <a href="#rings" class="hover:text-[#c5a059]">Rings</a>
+            <a href="#earrings" class="hover:text-[#c5a059]">Earrings</a>
+            <a href="#necklaces" class="hover:text-[#c5a059]">Necklaces</a>
+            <a href="#bracelets" class="hover:text-[#c5a059]">Bracelets</a>
+            <a href="#contact" class="hover:text-[#c5a059]">Contact</a>
+        </div>
+        <div class="flex items-center space-x-4">
+            <span class="text-xs font-bold">🛒 <span id="cart-val">0</span></span>
+            <span id="nav-phone" class="text-[10px] bg-gray-100 px-3 py-1 rounded-full">+1 (555) 123-4567</span>
         </div>
     </nav>
 
-    <section id="home" class="relative h-screen flex items-center justify-center text-center">
-        <div class="absolute inset-0 overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?q=80&w=2000" class="w-full h-full object-cover opacity-40">
+    <header id="home" class="hero-gradient h-screen flex flex-col justify-center items-center text-center text-white pt-20">
+        <h1 class="heading-font text-5xl md:text-8xl mb-4">Elegance Redefined</h1>
+        <p class="text-lg md:text-2xl font-light tracking-[0.4em] uppercase mb-10">Premium Gold Stainless Steel Jewelry</p>
+        <div class="flex space-x-4">
+            <a href="#rings" class="bg-gold hover:bg-yellow-700 text-white px-8 py-4 uppercase text-xs tracking-widest transition">Shop Collection</a>
+            <a href="#contact" class="border border-white hover:bg-white hover:text-black text-white px-8 py-4 uppercase text-xs tracking-widest transition">Contact Us</a>
         </div>
-        <div class="relative z-10 px-4">
-            <h2 class="text-5xl md:text-7xl mb-4 gold-font">Timeless Stainless</h2>
-            <p class="text-lg md:text-xl font-light tracking-[0.3em] uppercase mb-8">Waterproof • Tarnish-Free • 18k Gold Plated</p>
-            <a href="#collection" class="border border-yellow-600 text-yellow-500 px-10 py-3 hover:bg-yellow-600 hover:text-black transition uppercase tracking-widest text-xs">Explore 50+ New Pieces</a>
+    </header>
+
+    <section class="bg-[#111] text-white py-6">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-around text-[10px] uppercase tracking-[0.2em] text-center">
+            <div class="p-2">✨ Tarnish Resistant</div>
+            <div class="p-2">💧 100% Waterproof</div>
+            <div class="p-2">🚚 Free Express Delivery</div>
+            <div class="p-2">💎 Lifetime Quality Guarantee</div>
         </div>
     </section>
 
-    <section id="collection" class="py-24 max-w-7xl mx-auto px-6">
-        <div class="text-center mb-16">
-            <h3 class="text-3xl gold-font mb-2">Our Signature Collection</h3>
-            <p class="text-gray-500 text-sm tracking-widest uppercase">Stainless Steel & American Diamond</p>
-        </div>
+    <main class="max-w-7xl mx-auto px-6 py-20">
+        
+        <script>
+            const categories = [
+                { id: 'rings', title: 'Luxury Rings', img: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=500' },
+                { id: 'earrings', title: 'AD Earrings', img: 'https://images.unsplash.com/photo-1635767798638-3e25273a8236?w=500' },
+                { id: 'necklaces', title: 'Gold Necklaces', img: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=500' },
+                { id: 'bracelets', title: 'Bangles & Cuffs', img: 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=500' },
+                { id: 'ad-jewelry', title: 'Premium AD Collection', img: 'https://images.unsplash.com/photo-1515562141207-7a18b5ce7142?w=500' }
+            ];
 
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <script>
-                const products = [
-                    { name: 'Eternal Band', price: '$35', img: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=500' },
-                    { name: 'AD Crystal Studs', price: '$45', img: 'https://images.unsplash.com/photo-1635767798638-3e25273a8236?w=500' },
-                    { name: 'Pave Bangle', price: '$55', img: 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=500' },
-                    { name: 'Coin Necklace', price: '$40', img: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=500' },
-                    { name: 'Rope Chain', price: '$30', img: 'https://images.unsplash.com/photo-1611085510577-dc434b998275?w=500' },
-                    { name: 'Emerald AD Ring', price: '$65', img: 'https://images.unsplash.com/photo-1588444839799-eb00f4904654?w=500' },
-                    { name: 'Waterproof Hoop', price: '$25', img: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=500' },
-                    { name: 'Tennis Bracelet', price: '$75', img: 'https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=500' }
-                ];
-
-                products.forEach(p => {
-                    document.write(`
-                        <div class="product-card p-4 rounded-sm border border-white/5">
-                            <img src="${p.img}" class="w-full h-48 md:h-64 object-cover mb-4 grayscale hover:grayscale-0 transition duration-500">
-                            <h4 class="text-xs uppercase tracking-widest mb-1">${p.name}</h4>
-                            <p class="gold-font font-bold text-sm">${p.price}</p>
-                            <button class="mt-4 w-full border border-white/10 py-2 text-[10px] uppercase hover:bg-white hover:text-black transition">Add to Craft</button>
+            categories.forEach(cat => {
+                document.write(`
+                    <section id="${cat.id}" class="mb-32">
+                        <div class="flex justify-between items-end mb-10 border-b border-gray-200 pb-4">
+                            <h2 class="heading-font text-4xl gold-text">${cat.title}</h2>
+                            <p class="text-xs text-gray-400 italic">Showing 8 Products</p>
                         </div>
-                    `);
-                });
-            </script>
-        </div>
-    </section>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                            ${Array(8).fill(0).map((_, i) => `
+                                <div class="product-card group bg-white shadow-sm border border-gray-100 overflow-hidden">
+                                    <div class="relative overflow-hidden">
+                                        <img src="${cat.img}" alt="Jewelry">
+                                        <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                                            <button onclick="updateCart()" class="bg-white text-black px-6 py-2 text-[10px] font-bold uppercase tracking-widest">Add to Craft</button>
+                                        </div>
+                                    </div>
+                                    <div class="p-6 text-center">
+                                        <p class="text-[10px] text-gray-400 uppercase tracking-widest mb-1">Stainless Steel</p>
+                                        <h3 class="font-semibold text-sm mb-2 uppercase">Variety Item #${i+1}</h3>
+                                        <div class="flex justify-center items-center space-x-2">
+                                            <span class="gold-text font-bold">$45.00</span>
+                                            <span class="text-gray-300 line-through text-xs">$75.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </section>
+                `);
+            });
+        </script>
 
-    <section id="contact" class="py-24 bg-zinc-950 border-t border-white/5">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16">
+    </main>
+
+    <footer id="contact" class="bg-white border-t border-gray-100 py-20 px-8">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-16">
             <div>
-                <h3 class="text-4xl gold-font mb-6">Visit Variety Jewelers</h3>
-                <div class="space-y-6 text-gray-400">
-                    <div>
-                        <p class="text-xs uppercase text-yellow-600 mb-1">Our Location</p>
-                        <p id="display-location" class="text-lg">123 Luxury Avenue, Fashion District, NY</p>
-                    </div>
-                    <div>
-                        <p class="text-xs uppercase text-yellow-600 mb-1">Direct Contact</p>
-                        <p id="display-phone-bottom" class="text-lg text-white font-bold">+1 (555) 000-0000</p>
-                    </div>
+                <h2 class="heading-font text-2xl gold-text mb-6">Variety Jewelers</h2>
+                <p class="text-sm text-gray-500 leading-loose">We specialize in premium 316L Stainless Steel jewelry, finished with 18k gold PVD plating. Our pieces are designed for the modern woman who values style and durability.</p>
+            </div>
+            <div>
+                <h4 class="text-xs font-bold uppercase tracking-[0.2em] mb-6">Contact Details</h4>
+                <div class="space-y-4 text-sm">
+                    <p class="flex items-center">📞 <span id="footer-phone" class="ml-2">+1 (555) 123-4567</span></p>
+                    <p class="flex items-center">📍 <span id="footer-loc" class="ml-2">123 Luxury Mall, New York, USA</span></p>
+                    <p class="flex items-center">✉️ <span class="ml-2">hello@varietyjewelers.com</span></p>
                 </div>
             </div>
-            <div class="h-64 bg-zinc-900 border border-white/10 flex items-center justify-center italic text-gray-600">
-                [ Interactive Map Loaded Here ]
+            <div>
+                <h4 class="text-xs font-bold uppercase tracking-[0.2em] mb-6">Our Services</h4>
+                <ul class="text-sm text-gray-500 space-y-2">
+                    <li>Custom Sizing Available</li>
+                    <li>Gift Wrapping Included</li>
+                    <li>24/7 Customer Support</li>
+                    <li>Worldwide Secure Shipping</li>
+                </ul>
             </div>
         </div>
-    </section>
-
-    <div class="fixed bottom-4 right-4 z-[100] bg-yellow-600 text-black p-4 rounded-lg shadow-2xl">
-        <p class="text-[10px] font-bold uppercase mb-2">Admin: Quick Edit</p>
-        <div class="space-y-2">
-            <input id="edit-phone" type="text" placeholder="New Phone Number" class="text-xs p-1 w-full rounded border-none">
-            <input id="edit-location" type="text" placeholder="New Location" class="text-xs p-1 w-full rounded border-none">
-            <button onclick="updateSite()" class="bg-black text-white text-[10px] w-full py-1 uppercase font-bold">Update Website</button>
+        <div class="text-center mt-20 pt-10 border-t border-gray-100 text-[10px] text-gray-400 uppercase tracking-widest">
+            © 2026 Variety Jewelers. Designed for Elegance.
         </div>
-    </div>
+    </footer>
 
     <script>
-        function updateSite() {
+        let count = 0;
+        function updateCart() {
+            count++;
+            document.getElementById('cart-val').innerText = count;
+            alert("Added to your craft!");
+        }
+
+        function saveChanges() {
             const phone = document.getElementById('edit-phone').value;
-            const loc = document.getElementById('edit-location').value;
+            const loc = document.getElementById('edit-loc').value;
 
             if(phone) {
-                document.getElementById('display-phone-top').innerText = phone;
-                document.getElementById('display-phone-bottom').innerText = phone;
+                document.getElementById('nav-phone').innerText = phone;
+                document.getElementById('footer-phone').innerText = phone;
             }
             if(loc) {
-                document.getElementById('display-location').innerText = loc;
+                document.getElementById('footer-loc').innerText = loc;
             }
-            alert("Website details updated locally!");
+            alert("Details updated successfully!");
         }
     </script>
 
