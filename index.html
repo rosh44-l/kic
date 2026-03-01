@@ -3,174 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Variety Jewelers | Luxury Gold Stainless & AD Collection</title>
+    <title>Variety Jewelers | Premium Stainless Steel & AD Jewelry</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Montserrat', sans-serif; scroll-behavior: smooth; }
-        h1, h2, h3, .brand-font { font-family: 'Playfair Display', serif; }
-        .modal { display: none; position: fixed; z-index: 100; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); }
+        body { font-family: 'Montserrat', sans-serif; background-color: #0a0a0a; color: #f4f4f4; }
+        .gold-font { font-family: 'Cinzel', serif; color: #d4af37; }
+        .gold-border { border-color: #d4af37; }
+        .gold-bg { background: linear-gradient(135deg, #b8860b 0%, #d4af37 50%, #b8860b 100%); }
+        .glass-nav { background: rgba(10, 10, 10, 0.85); backdrop-filter: blur(10px); }
+        .product-card { background: #1a1a1a; transition: transform 0.3s ease; }
+        .product-card:hover { transform: translateY(-10px); border: 1px solid #d4af37; }
     </style>
 </head>
-<body class="bg-[#fdfbf7] text-gray-800">
+<body>
 
-    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-yellow-700/10 shadow-sm px-6 py-4">
+    <nav class="fixed top-0 w-full z-50 glass-nav border-b border-white/10 px-6 py-4">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <div class="text-2xl font-bold tracking-widest text-yellow-800">VARIETY JEWELERS</div>
-            <div class="hidden lg:flex space-x-6 font-medium text-xs uppercase tracking-widest">
-                <a href="#home" class="hover:text-yellow-600 transition">Home</a>
-                <a href="#rings" class="hover:text-yellow-600 transition">Rings</a>
-                <a href="#earrings" class="hover:text-yellow-600 transition">Earrings</a>
-                <a href="#necklaces" class="hover:text-yellow-600 transition">Necklaces</a>
-                <a href="#bracelets" class="hover:text-yellow-600 transition">Bracelets</a>
-                <a href="#contact" class="hover:text-yellow-600 transition">Contact</a>
+            <h1 class="text-2xl font-bold tracking-[0.2em] gold-font">VARIETY JEWELERS</h1>
+            <div class="hidden md:flex space-x-8 text-[10px] uppercase tracking-widest font-semibold">
+                <a href="#home" class="hover:text-yellow-500">Home</a>
+                <a href="#collection" class="hover:text-yellow-500">Collection</a>
+                <a href="#contact" class="hover:text-yellow-500">Contact</a>
             </div>
             <div class="flex items-center space-x-4">
-                <span class="cursor-pointer text-xl">🛒 <span id="cart-count" class="text-sm font-bold text-yellow-700">0</span></span>
+                <span class="text-xs gold-font hidden sm:block">📞 <span id="display-phone-top">+1 (555) 000-0000</span></span>
+                <button class="gold-bg text-black text-[10px] px-4 py-2 font-bold uppercase tracking-tighter">Shop Now</button>
             </div>
         </div>
     </nav>
 
-    <section id="home" class="relative h-[70vh] flex items-center justify-center text-center text-white">
-        <img src="https://images.unsplash.com/photo-1515562141207-7a18b5ce7142?auto=format&fit=crop&q=80&w=1500" class="absolute inset-0 w-full h-full object-cover brightness-50" alt="Hero">
+    <section id="home" class="relative h-screen flex items-center justify-center text-center">
+        <div class="absolute inset-0 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?q=80&w=2000" class="w-full h-full object-cover opacity-40">
+        </div>
         <div class="relative z-10 px-4">
-            <h1 class="text-5xl md:text-6xl mb-4">Gold Stainless & AD Jewelry</h1>
-            <p class="text-lg mb-8 tracking-widest uppercase">Tarnish-Free • Waterproof • Elegant</p>
-            <a href="#rings" class="bg-yellow-700 hover:bg-yellow-800 px-8 py-3 text-sm uppercase tracking-widest transition">Explore Shop</a>
+            <h2 class="text-5xl md:text-7xl mb-4 gold-font">Timeless Stainless</h2>
+            <p class="text-lg md:text-xl font-light tracking-[0.3em] uppercase mb-8">Waterproof • Tarnish-Free • 18k Gold Plated</p>
+            <a href="#collection" class="border border-yellow-600 text-yellow-500 px-10 py-3 hover:bg-yellow-600 hover:text-black transition uppercase tracking-widest text-xs">Explore 50+ New Pieces</a>
         </div>
     </section>
 
-    <div class="max-w-7xl mx-auto px-6 py-16">
-        
-        <section id="rings" class="mb-20">
-            <h2 class="text-3xl mb-10 border-b border-yellow-700/20 pb-4">Classic Rings</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white p-4 shadow-sm group">
-                    <div class="relative overflow-hidden aspect-square mb-4">
-                        <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        <button onclick="openGallery('Gold Band', '$45', 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&q=80&w=600')" class="absolute bottom-4 left-4 right-4 bg-white/90 py-2 text-xs uppercase opacity-0 group-hover:opacity-100 transition">View Details</button>
+    <section id="collection" class="py-24 max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <h3 class="text-3xl gold-font mb-2">Our Signature Collection</h3>
+            <p class="text-gray-500 text-sm tracking-widest uppercase">Stainless Steel & American Diamond</p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <script>
+                const products = [
+                    { name: 'Eternal Band', price: '$35', img: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=500' },
+                    { name: 'AD Crystal Studs', price: '$45', img: 'https://images.unsplash.com/photo-1635767798638-3e25273a8236?w=500' },
+                    { name: 'Pave Bangle', price: '$55', img: 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=500' },
+                    { name: 'Coin Necklace', price: '$40', img: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=500' },
+                    { name: 'Rope Chain', price: '$30', img: 'https://images.unsplash.com/photo-1611085510577-dc434b998275?w=500' },
+                    { name: 'Emerald AD Ring', price: '$65', img: 'https://images.unsplash.com/photo-1588444839799-eb00f4904654?w=500' },
+                    { name: 'Waterproof Hoop', price: '$25', img: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=500' },
+                    { name: 'Tennis Bracelet', price: '$75', img: 'https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=500' }
+                ];
+
+                products.forEach(p => {
+                    document.write(`
+                        <div class="product-card p-4 rounded-sm border border-white/5">
+                            <img src="${p.img}" class="w-full h-48 md:h-64 object-cover mb-4 grayscale hover:grayscale-0 transition duration-500">
+                            <h4 class="text-xs uppercase tracking-widest mb-1">${p.name}</h4>
+                            <p class="gold-font font-bold text-sm">${p.price}</p>
+                            <button class="mt-4 w-full border border-white/10 py-2 text-[10px] uppercase hover:bg-white hover:text-black transition">Add to Craft</button>
+                        </div>
+                    `);
+                });
+            </script>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 bg-zinc-950 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16">
+            <div>
+                <h3 class="text-4xl gold-font mb-6">Visit Variety Jewelers</h3>
+                <div class="space-y-6 text-gray-400">
+                    <div>
+                        <p class="text-xs uppercase text-yellow-600 mb-1">Our Location</p>
+                        <p id="display-location" class="text-lg">123 Luxury Avenue, Fashion District, NY</p>
                     </div>
-                    <h3 class="font-bold">Eternal Gold Band</h3>
-                    <p class="text-yellow-700 font-semibold">$45.00 <span class="text-gray-400 line-through text-xs ml-2">$60.00</span></p>
-                    <button onclick="addToCart()" class="w-full mt-4 py-2 bg-zinc-900 text-white text-xs uppercase tracking-widest hover:bg-yellow-700 transition">Add to Craft</button>
-                </div>
-            </div>
-        </section>
-
-        <section id="earrings" class="mb-20">
-            <h2 class="text-3xl mb-10 border-b border-yellow-700/20 pb-4">Dainty Earrings</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white p-4 shadow-sm group">
-                    <div class="relative overflow-hidden aspect-square mb-4">
-                        <img src="https://images.unsplash.com/photo-1635767798638-3e25273a8236?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        <button onclick="openGallery('AD Studs', '$30', 'https://images.unsplash.com/photo-1635767798638-3e25273a8236?auto=format&fit=crop&q=80&w=600')" class="absolute bottom-4 left-4 right-4 bg-white/90 py-2 text-xs uppercase opacity-0 group-hover:opacity-100 transition">View Details</button>
+                    <div>
+                        <p class="text-xs uppercase text-yellow-600 mb-1">Direct Contact</p>
+                        <p id="display-phone-bottom" class="text-lg text-white font-bold">+1 (555) 000-0000</p>
                     </div>
-                    <h3 class="font-bold">AD Crystal Studs</h3>
-                    <p class="text-yellow-700 font-semibold">$30.00</p>
-                    <button onclick="addToCart()" class="w-full mt-4 py-2 bg-zinc-900 text-white text-xs uppercase tracking-widest hover:bg-yellow-700 transition">Add to Craft</button>
                 </div>
             </div>
-        </section>
-
-        <section id="necklaces" class="mb-20">
-            <h2 class="text-3xl mb-10 border-b border-yellow-700/20 pb-4">Necklaces & Pendants</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white p-4 shadow-sm group">
-                    <div class="relative overflow-hidden aspect-square mb-4">
-                        <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        <button onclick="openGallery('Layered Gold', '$55', 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&q=80&w=600')" class="absolute bottom-4 left-4 right-4 bg-white/90 py-2 text-xs uppercase opacity-0 group-hover:opacity-100 transition">View Details</button>
-                    </div>
-                    <h3 class="font-bold">Layered Gold Chain</h3>
-                    <p class="text-yellow-700 font-semibold">$55.00 <span class="bg-red-100 text-red-700 text-[10px] px-2 ml-2">SALE</span></p>
-                    <button onclick="addToCart()" class="w-full mt-4 py-2 bg-zinc-900 text-white text-xs uppercase tracking-widest hover:bg-yellow-700 transition">Add to Craft</button>
-                </div>
-            </div>
-        </section>
-
-        <section id="bracelets" class="mb-20">
-            <h2 class="text-3xl mb-10 border-b border-yellow-700/20 pb-4">Bangles & Bracelets</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white p-4 shadow-sm group">
-                    <div class="relative overflow-hidden aspect-square mb-4">
-                        <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                        <button onclick="openGallery('Classic Bangle', '$40', 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&q=80&w=600')" class="absolute bottom-4 left-4 right-4 bg-white/90 py-2 text-xs uppercase opacity-0 group-hover:opacity-100 transition">View Details</button>
-                    </div>
-                    <h3 class="font-bold">Signature Bangle</h3>
-                    <p class="text-yellow-700 font-semibold">$40.00</p>
-                    <button onclick="addToCart()" class="w-full mt-4 py-2 bg-zinc-900 text-white text-xs uppercase tracking-widest hover:bg-yellow-700 transition">Add to Craft</button>
-                </div>
-            </div>
-        </section>
-
-    </div>
-
-    <div id="galleryModal" class="modal flex items-center justify-center p-4">
-        <div class="bg-white max-w-4xl w-full grid grid-cols-1 md:grid-cols-2 relative">
-            <button onclick="closeGallery()" class="absolute top-4 right-4 text-2xl font-bold">&times;</button>
-            <div class="p-4">
-                <img id="modalImg" src="" class="w-full h-96 object-cover shadow-lg">
-            </div>
-            <div class="p-10 flex flex-col justify-center">
-                <h2 id="modalTitle" class="text-3xl mb-2 font-bold"></h2>
-                <p id="modalPrice" class="text-xl text-yellow-700 mb-4"></p>
-                <p class="text-gray-500 text-sm mb-6">This premium piece is crafted from 316L Stainless Steel with 18k Gold PVD plating. Hypoallergenic and tarnish-resistant for life.</p>
-                <div class="flex gap-2">
-                    <div class="w-12 h-12 border border-gray-200 p-1 cursor-pointer"><img src="https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&q=80&w=100" class="w-full h-full object-cover"></div>
-                    <div class="w-12 h-12 border border-gray-200 p-1 cursor-pointer opacity-50 hover:opacity-100 transition"><img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&q=80&w=100" class="w-full h-full object-cover"></div>
-                </div>
+            <div class="h-64 bg-zinc-900 border border-white/10 flex items-center justify-center italic text-gray-600">
+                [ Interactive Map Loaded Here ]
             </div>
         </div>
-    </div>
+    </section>
 
-    <footer id="contact" class="bg-zinc-900 text-white py-20 px-6">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
-            <div>
-                <h2 class="text-2xl mb-6">Variety Jewelers</h2>
-                <p class="text-gray-400 text-sm">Providing premium gold-plated stainless steel jewelry that never loses its shine. Join our 50,000+ happy customers.</p>
-            </div>
-            <div>
-                <h4 class="text-yellow-600 uppercase text-xs mb-6 tracking-widest">Connect</h4>
-                <p class="mb-2">📍 Main Street Luxury Mall, NY</p>
-                <p class="mb-2">📞 +1 234 567 890</p>
-                <p>✉️ support@varietyjewelers.com</p>
-            </div>
-            <div>
-                <h4 class="text-yellow-600 uppercase text-xs mb-6 tracking-widest">Our Service</h4>
-                <p class="text-gray-400 text-sm mb-4">Free Shipping on orders over $100. 1-year warranty on all AD Jewelry.</p>
-                <div class="flex space-x-4">
-                    <span class="cursor-pointer hover:text-yellow-500">IG</span>
-                    <span class="cursor-pointer hover:text-yellow-500">FB</span>
-                </div>
-            </div>
+    <div class="fixed bottom-4 right-4 z-[100] bg-yellow-600 text-black p-4 rounded-lg shadow-2xl">
+        <p class="text-[10px] font-bold uppercase mb-2">Admin: Quick Edit</p>
+        <div class="space-y-2">
+            <input id="edit-phone" type="text" placeholder="New Phone Number" class="text-xs p-1 w-full rounded border-none">
+            <input id="edit-location" type="text" placeholder="New Location" class="text-xs p-1 w-full rounded border-none">
+            <button onclick="updateSite()" class="bg-black text-white text-[10px] w-full py-1 uppercase font-bold">Update Website</button>
         </div>
-    </footer>
+    </div>
 
     <script>
-        let count = 0;
-        function addToCart() {
-            count++;
-            document.getElementById('cart-count').innerText = count;
-            alert("Added to your craft!");
-        }
+        function updateSite() {
+            const phone = document.getElementById('edit-phone').value;
+            const loc = document.getElementById('edit-location').value;
 
-        function openGallery(title, price, img) {
-            document.getElementById('modalTitle').innerText = title;
-            document.getElementById('modalPrice').innerText = price;
-            document.getElementById('modalImg').src = img;
-            document.getElementById('galleryModal').style.display = 'flex';
-        }
-
-        function closeGallery() {
-            document.getElementById('galleryModal').style.display = 'none';
-        }
-
-        // Close modal if user clicks outside of the box
-        window.onclick = function(event) {
-            let modal = document.getElementById('galleryModal');
-            if (event.target == modal) {
-                modal.style.display = "none";
+            if(phone) {
+                document.getElementById('display-phone-top').innerText = phone;
+                document.getElementById('display-phone-bottom').innerText = phone;
             }
+            if(loc) {
+                document.getElementById('display-location').innerText = loc;
+            }
+            alert("Website details updated locally!");
         }
     </script>
+
 </body>
 </html></ht1>
